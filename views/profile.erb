@@ -1,11 +1,24 @@
+<!-- Profile Page -->
+
 <% @users.each do |user| %>
+<h1><%= user.name %> <%= user.last %></h1>
+<img class="profileImage" src="<%= user.photo.url %>" />
+
+<div class="profileCredentials">
+	<h3>Profile</h3>
 	<ul>
-		<li><%= user.name %></li>
-		<li><%= user.last %></li>
-		<li><%= user.username %></li>
-		<li><%= user.password %></li>
-		<li><img src="<%= user.photo.url %>" /></li>
-		<li><%= user.occupancy %></li>
-		<li><%= user.relationship %></li>
+		<li>Username: <%= user.username %></li>
+		<li>Occupancy: <%= user.occupancy %></li>
+		<li>Relationship: <%= user.relationship %></li>
 	</ul>
+</div>
+
+<div class="currentPost">
+	<% user.posts.each do |post| %>
+	<li><%= post.message %></li>
+	<li><img src="<%= post.photo.url %>" /></li>
+	<% end %>
+</div>
+
 <% end %>
+
