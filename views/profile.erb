@@ -1,0 +1,11 @@
+<% @users.each do |user| %>
+	<ul>
+		<li><%= user.name %></li>
+		<li><%= user.last %></li>
+		<li><%= user.username %></li>
+		<li><%= user.password %></li>
+		<li><img src="<%= user.photo.url %>" /></li>
+		<li><%= user.occupancy %></li>
+		<li><%= user.relationship %></li>
+	</ul>
+<% end %>
