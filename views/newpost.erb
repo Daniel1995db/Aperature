@@ -1,13 +1,8 @@
-<form class="newpost" method="POST" action="">
-	
-</form>
-
-
-
-name: Cersei
-last: Lannister
-usernmae: walkofshame
-password: queen1
-
-occupancy: Queen
-relationship: it's complicated
+<div class="newPost">
+	<h3>New Post</h3>
+	<form method="POST" enctype="multipart/form-data" action="/newpost">
+		<label>Image</label><input type="file" name="photo" />
+		<label>Message</label><textarea name="message"></textarea>
+		<input type="submit" value="Post">
+	</form>
+</div>
