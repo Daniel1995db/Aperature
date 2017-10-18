@@ -1,5 +1,10 @@
 <h1>News Feed</h1>
-
+<form method="POST" class="logoutButton" action="/logout">
+	<input type="submit" name="logout" value="Log Out">
+</form>
+<form method="GET" class="" action="/profile">
+	<input type="submit" name="profie" value="Profile">
+</form>
 <% @user.each do |user| %>
 	
 	<% user.posts.each do |post| %>
