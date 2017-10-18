@@ -1,0 +1,10 @@
+<h1>News Feed</h1>
+
+<% @user.each do |user| %>
+	
+	<% user.posts.each do |post| %>
+	<%= post.message %>
+	<img src="<%= post.photo.url %>" />
+	<% end %>
+
+<% end %>
