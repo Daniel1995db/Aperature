@@ -4,12 +4,16 @@
 </form>
 <form method="GET" class="" action="/profile">
 	<input type="submit" name="profie" value="Profile">
+
 </form>
-<% @user.each do |user| %>
+
+<%= erb :newpost %>
+
+<%# @users.each do |user| %>
 	
-	<% user.posts.each do |post| %>
+	<% @posts.each do |post| %>
 	<%= post.message %>
 	<img src="<%= post.photo.url %>" />
 	<% end %>
 
-<% end %>
+<%# end %>

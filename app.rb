@@ -18,7 +18,7 @@ before do
 end
 
 # login protecting routes
-before ['/buzzfeed','/profile','/newpost','/logout'] do
+before ['/buzzfeed','/profile','/newpost','/logout','/newpost'] do
   redirect '/' unless @current_user
 end
 
@@ -31,13 +31,14 @@ get '/home' do
 end
 
 get '/buzzfeed' do
-  @user = User.all
+  @users = User.all
+  @posts = Post.all
   erb :buzzfeed
 end
 
 get '/profile' do
-	@users = User.all
-	erb :profile
+	# @users = User.all
+	erb :profile, locals: {user: @current_user}
 end
 
 get'/login' do
@@ -90,6 +91,16 @@ end
 
 def current_user
   @current_user = User.find(session[:user_id]) if session[:user_id]
+end
+
+post '/newpost' do
+  post = Post.new(
+    photo: params[:photo],
+    message: params[:message],
+    user_id: @current_user.id
+  )
+  post.save
+  redirect '/buzzfeed'
 end
 
 
