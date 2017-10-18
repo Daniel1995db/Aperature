@@ -63,7 +63,6 @@ post '/login' do
   else 
     flash[:message] = "Incorrect Username or Password"
     redirect back 
-    # onLoad="setTimeout('delayedRedirect()', 3000)"
   end
 end
 
