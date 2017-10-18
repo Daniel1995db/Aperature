@@ -9,8 +9,18 @@ require './models'
 enable :sessions
 set :database, {adapter: 'sqlite3', database: 'microblog.sqlite3'}
 
+
 get '/' do
 	erb :home
+end
+
+get '/home' do
+  redirect '/signup'
+end
+
+get '/buzzfeed' do
+  @user = User.all
+  erb :buzzfeed
 end
 
 get '/profile' do
@@ -36,12 +46,40 @@ post '/signup' do
     occupancy: params[:occupancy],
     relationship: params[:relationship]
   )
-  user.save
-  # if user.save
-  #   flash[:message] = "Welcome! You've registered successfully"
-  #   redirect '/'
-  # else
-  #   flash[:message] = "Ooops, something went wrong. Your account couldn't be created at this time"
-  #   redirect back
-  
+  if user.save
+    flash[:message] = "Welcome! You've registered successfully"
+    redirect '/buzzfeed'
+  else
+    flash[:message] = "Ooops, something went wrong. Your account couldn't be created at this time"
+    redirect back
+  end
 end
+
+post '/login' do
+  user = User.find_by(username: params[:username])
+  if user && user.password == params[:password]
+    flash[:message] = "Welcome"
+    redirect '/buzzfeed'
+  else 
+    flash[:message] = "Incorrect Username or Password"
+    redirect back 
+    # onLoad="setTimeout('delayedRedirect()', 3000)"
+  end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
