@@ -103,6 +103,25 @@ post '/newpost' do
   redirect '/buzzfeed'
 end
 
+post '/comment' do
+  comment = Comment.new(
+    message: params[:message],
+    user_id: @current_user.id,
+    post_id: params[:post_id]
+  )
+  comment.save
+  redirect back
+end
+
+post '/profile/update' do
+    @current_user.update(
+        username: params[:username],
+        password: params[:password],
+        occupancy: params[:occupancy],
+        relationship: params[:relationship]
+    ) 
+    redirect back
+end
 
 
 
