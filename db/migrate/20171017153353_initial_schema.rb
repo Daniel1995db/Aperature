@@ -12,6 +12,7 @@ class InitialSchema < ActiveRecord::Migration[5.1]
   	create_table :posts do |t|
   		t.string :message, limit: 150
   		t.string :photo
+      t.datetime :datetime
   		t.references :user, foreign_key: {to_table: :users}, index: true
   	end
   	create_table :comments do |t|

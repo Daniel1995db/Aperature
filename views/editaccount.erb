@@ -1,3 +1,4 @@
+<%= erb :nav %>
 <% if @current_user %>
 
 <form method="POST" enctype="multipart/form-data" class="editAccount" action="/profile/update">
@@ -9,5 +10,7 @@
 	<!-- <input type="text" value="Delete Account" /> -->
 	<input type="submit" />
 </form>
+
+<%= erb :deleteaccount %>
 
 <% end %>

@@ -33,6 +33,7 @@ end
 get '/buzzfeed' do
   @users = User.all
   @posts = Post.all
+  @posts = Post.all.order(id: :desc)
   erb :buzzfeed
 end
 
@@ -83,7 +84,8 @@ post '/login' do
   end
 end
 
-post '/logout' do
+get '/logout' do
+  erb :nav
   session[:user_id] = nil
   flash[:message] = "You've Logged Out Safely"
   redirect '/'
@@ -97,6 +99,7 @@ post '/newpost' do
   post = Post.new(
     photo: params[:photo],
     message: params[:message],
+    datetime: DateTime.now.change(:offset => "+0000"),
     user_id: @current_user.id
   )
   post.save
@@ -120,12 +123,30 @@ post '/profile/update' do
         occupancy: params[:occupancy],
         relationship: params[:relationship]
     ) 
-    redirect back
+    flash[:message] = "You've Updated Your Profile!" 
+    redirect '/buzzfeed'
+end
+ 
+post '/deleteaccount' do
+  # @current_user
+  User.transaction do
+    @current_user.comments.destroy_all
+    @current_user.posts.each do |post|
+      post.comments.destroy_all 
+    end
+    @current_user.posts.destroy_all
+    @current_user.destroy
+    session[:user_id] = nil
+  end
+  redirect '/'
+end
+get '/editaccount' do
+  erb :editaccount
 end
 
-
-
-
+# def posts(posts)
+#   posts.each_index.map { |i| numbers[-1-i] }
+# end
 
 
 
