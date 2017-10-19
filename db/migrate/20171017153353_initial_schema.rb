@@ -15,7 +15,7 @@ class InitialSchema < ActiveRecord::Migration[5.1]
   		t.references :user, foreign_key: {to_table: :users}, index: true
   	end
   	create_table :comments do |t|
-  		t.string :comment_message, limit: 64 
+  		t.string :message, limit: 64 
   		t.references :user, foreign_key: {to_table: :users}, index: true
   		t.references :post, foreign_key: {to_table: :posts}, index: true
   	end

@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 20171017153353) do
 
   create_table "comments", force: :cascade do |t|
-    t.string "comment_message", limit: 64
+    t.string "message", limit: 64
     t.integer "user_id"
     t.integer "post_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
