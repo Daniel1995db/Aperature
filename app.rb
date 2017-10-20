@@ -18,7 +18,7 @@ before do
 end
 
 # login protecting routes
-before ['/buzzfeed','/profile','/newpost','/logout','/newpost'] do
+before ['/buzzfeed','/profile','/newpost','/logout','/newpost',"/editaccount"] do
   redirect '/' unless @current_user
 end
 
@@ -105,7 +105,7 @@ post '/newpost' do
     user_id: @current_user.id
   )
   post.save
-  redirect '/buzzfeed'
+  redirect back
 end
 
 post '/comment' do
@@ -130,10 +130,38 @@ end
 
 
 
+    flash[:message] = "You've Updated Your Profile!" 
+    redirect '/buzzfeed'
+end
+ 
+post '/deleteaccount' do
+  # @current_user
+  User.transaction do
+    @current_user.comments.destroy_all
+    @current_user.posts.each do |post|
+      post.comments.destroy_all 
+    end
+    @current_user.posts.destroy_all
+    @current_user.destroy
+    session[:user_id] = nil
+  end
+  flash[:message] = "Your account has been deleted, we apologize for any inconviniece we may have caused you that led to this"
+  redirect '/'
+end
+get '/editaccount' do
+  erb :editaccount
+end
 
+# def posts(posts)
+#   posts.each_index.map { |i| numbers[-1-i] }
+# end
+post '/deleteaccountpage' do
+  erb :deleteaccountpage
+end
 
-
-
+get '/contact' do
+  erb :contact
+end
 
 
 

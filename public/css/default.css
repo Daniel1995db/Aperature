@@ -1,3 +1,4 @@
+
 body {
 	background: linear-gradient(to bottom, #bcbdc4, #5fc4e2);
 	background-size: cover;
@@ -11,7 +12,6 @@ body {
 
 
 }
-
 .header {
 	position: fixed;
 	width: 100%;
@@ -22,6 +22,7 @@ body {
 	z-index: -1;
 	-webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
 }
+
 
 .h1HomePage {
 	position: fixed;
@@ -43,3 +44,135 @@ body {
 	height: 60px;
 	width: 115px;
 }
+
+
+/*Danny's Editing*/
+
+/*contact page styling*/
+.contactHeading{
+  text-align: center;
+  font-family: "HurmeGeometricSans1-Regular", sans-serif;
+  font-size: 3em;
+  margin-top: 15px;
+
+}
+.contactParagraph{
+  text-align: center;
+  font-family: "HurmeGeometricSans1-Regular", sans-serif;
+  width: 800px;
+  margin: 22px auto 22px auto;
+}
+
+.sideBySide {
+  width:80%;
+  margin: 0px auto 100px auto;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: "HurmeGeometricSans1-Regular", sans-serif;
+}
+.sideBySide * {
+  box-sizing: border-box;
+}
+.sideBySide > div {
+  float: left;
+  width: 25%;
+  border-right: 5px solid black;
+  height: 190px;
+}
+.sideBySide .contactNav{
+  text-decoration: none;
+  font-size: 15px;
+  text-decoration-color: none;
+  color: black;
+  text-shadow: none;
+}
+.sideBySide .contactNavEmail{
+  text-decoration: none;
+  font-size: 22px;
+  text-decoration-color: none;
+  color: black;
+  text-shadow: none;
+}
+.sideBySide .contactNav:visited{
+  color: black;
+}
+.sideBySide .contactNavEmail:visited{
+  color: black;
+}
+.phoneNumber{
+  font-size: 20px;
+  font-weight: bold;
+}
+.sideBySide h4{
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.sideBySide .contactMessage{
+  margin-bottom: auto;
+  margin-top: auto;
+  border-style: none;
+  cursor: pointer;
+}
+.phoneIcon, .emailIcon, .messageIcon{
+  height: 50px;
+}
+.addressIcon{
+  height: 60px;
+  /*padding-bottom: 20px;*/
+}
+.messageIcon{
+  margin-top: 46px;
+}
+.emailIcon{
+  margin-top: 32px;
+}
+.emailText{
+  margin-bottom: 17px;
+  font-size: 20px;
+}
+.phoneIcon{
+  margin-top: 20px;
+}
+
+.contactForm{
+  text-align: center;
+  margin: 10px auto 10px auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.contactForm td{
+  /*display: none;*/
+  height:40px;
+}
+.contactForm td input{
+  width: 100%;
+}
+.sendButton{
+  width: 40px;
+}
+
+
+/*.form1{
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+}*/
+.container{
+  margin-bottom: 100px;
+  margin-top: 300px;
+  padding-bottom: 100px;
+  display: none;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 1.5s;
+/*  width:900px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 100px;
+*/}
+
+
+
