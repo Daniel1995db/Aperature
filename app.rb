@@ -23,7 +23,7 @@ before ['/buzzfeed','/profile','/newpost','/logout','/newpost',"/editaccount"] d
 end
 
 get '/' do
-  @class="otherbody"
+  # @class="otherbody"
   erb :home
 end
 
@@ -46,12 +46,12 @@ get '/profile' do
 end
 
 get'/login' do
-  @class="otherbody"
+  # @class="otherbody"
   erb :login
 end
 
 get '/signup' do 
-  @class="otherbody"
+  # @class="otherbody"
   erb :signup
 end
 

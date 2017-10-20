@@ -1,19 +1,29 @@
 
-
-
-body {
-	background: linear-gradient(to bottom, #bcbdc4, #5fc4e2);
+/*body {
+	 height: 1000px;
 	background-size: cover;
 	background-repeat: no-repeat;
+}*/
+body:after{
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  content:'';
+  background: linear-gradient(to bottom, #bcbdc4, #5fc4e2);
+    background-size: cover;
+  background-repeat: no-repeat;
+  z-index:-2;
 }
 
-.otherbody{
+/*.otherbody{
 	background: linear-gradient(to bottom, #bcbdc4, #5fc4e2);
 	background-repeat: no-repeat;
-	height: 100ch;
+	height: 100vh;
 
 
-}
+}*/
 .header {
 	position: fixed;
 	width: 100%;
@@ -35,11 +45,14 @@ body {
 	padding-left: 45%;
 }
 
-.button {
+.HomePagebutton {
 	position: fixed;
-	padding: 50%;
-	height: 1000px;
+	padding-top: 30%;
+  padding-left: 45%;
+	height: 100px;
 	width: 70px;
+  
+  /*margin-bottom: 100px;*/
 }
 
 .loginbutton {
