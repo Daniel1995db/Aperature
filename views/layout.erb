@@ -3,11 +3,14 @@
 <head>
 	<meta charset="utf-8">
 	<title>GOTgram</title>
+	<link rel="stylesheet" type="text/css" href="/css/normalize.css"/>
+      <link rel="stylesheet" type="text/css" href="/css/skeleton.css"/>
+      <link href="https://fonts.googleapis.com/css?family=Nosifer|Pacifico" rel="stylesheet">
 	<link rel="stylesheet" href="/css/default.css"/>
-	<link href="https://fonts.googleapis.com/css?family=Nosifer|Pacifico" rel="stylesheet">
+	
 	
 </head>
-<body>
+<body class="<%=@class%>">
 	<div id="flashMessage"><%= flash[:message] %>
 	</div>
 	<div class="header">

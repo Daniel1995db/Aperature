@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20171017153353) do
   create_table "posts", force: :cascade do |t|
     t.string "message", limit: 150
     t.string "photo"
-    t.datetime "datetime"
     t.integer "user_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
