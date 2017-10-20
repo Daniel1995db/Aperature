@@ -1,4 +1,19 @@
 
+
+
+body {
+	background: linear-gradient(to bottom, #bcbdc4, #5fc4e2);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.otherbody{
+	background: linear-gradient(to bottom, #bcbdc4, #5fc4e2);
+	background-repeat: no-repeat;
+	height: 100ch;
+
+
+}
 .header {
 	position: fixed;
 	width: 100%;
@@ -10,7 +25,8 @@
 	-webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
 }
 
-.h1HomePage{
+
+.h1HomePage {
 	position: fixed;
 	font-family: 'Pacifico', cursive;
 	font-size: 30px;
@@ -28,7 +44,7 @@
 
 .loginbutton {
 	height: 60px;
-	width: 70px;
+	width: 115px;
 }
 
 

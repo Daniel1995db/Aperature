@@ -23,30 +23,34 @@ before ['/buzzfeed','/profile','/newpost','/logout','/newpost',"/editaccount"] d
 end
 
 get '/' do
+   @class="otherbody"
 	erb :home
 end
 
 get '/home' do
   redirect '/signup'
+   @class="otherbody"
 end
 
 get '/buzzfeed' do
   @users = User.all
   @posts = Post.all
-  @posts = Post.all.order(id: :desc)
   erb :buzzfeed
 end
 
 get '/profile' do
 	# @users = User.all
+   @class="otherbody"
 	erb :profile, locals: {user: @current_user}
 end
 
 get'/login' do
+   @class="otherbody"
 	erb :login
 end
 
 get '/signup' do 
+   @class="otherbody"
 	erb :signup
 end
 
@@ -84,8 +88,7 @@ post '/login' do
   end
 end
 
-get '/logout' do
-  erb :nav
+post '/logout' do
   session[:user_id] = nil
   flash[:message] = "You've Logged Out Safely"
   redirect '/'
@@ -99,7 +102,6 @@ post '/newpost' do
   post = Post.new(
     photo: params[:photo],
     message: params[:message],
-    datetime: DateTime.now.change(:offset => "+0000"),
     user_id: @current_user.id
   )
   post.save
@@ -123,6 +125,11 @@ post '/profile/update' do
         occupancy: params[:occupancy],
         relationship: params[:relationship]
     ) 
+    redirect back
+end
+
+
+
     flash[:message] = "You've Updated Your Profile!" 
     redirect '/buzzfeed'
 end
@@ -155,6 +162,7 @@ end
 get '/contact' do
   erb :contact
 end
+
 
 
 

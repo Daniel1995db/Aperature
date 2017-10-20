@@ -4,5 +4,5 @@ User.create([
 	{id: 3, name: 'Sansa', last: 'Stark', username: 'lady', password: 'joffrey', photo: open('http://images6.fanpop.com/image/photos/37400000/Sansa-Stark-sansa-stark-37474878-4912-7360.jpg'), occupancy: 'Lady of Winterfell', relationship: 'Widowed and Divorced'}
 ])
 Post.create([
-	{id: 1, message: "I am King in the North", photo: open('http://awoiaf.westeros.org/images/f/ff/Lino_Drieghe_Winterfell.JPG'), user_id: 1, datetime: '2017-10-19 17:07:08'} 
+	{id: 1, message: "I am King in the North", photo: open('http://awoiaf.westeros.org/images/f/ff/Lino_Drieghe_Winterfell.JPG'), user_id: 1} 
 ])

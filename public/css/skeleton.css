@@ -1,4 +1,8 @@
+
+/*/*
+=======
 /*
+>>>>>>> e710e70721b0b34c37b7af1c9c9573e0733216d2
 * Skeleton V2.0.4
 * Copyright 2014, Dave Gamache
 * www.getskeleton.com
@@ -320,7 +324,11 @@ pre > code {
   white-space: pre; }
 
 
+
+/* Tables<link href="https://fonts.googleapis.com/css?family=Nosifer|Pacifico" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Nosifer|Pacifico" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Nosifer|Pacifico" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Nosifer|Pacifico" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Nosifer|Pacifico" rel="stylesheet">
+=======
 /* Tables
+>>>>>>> e710e70721b0b34c37b7af1c9c9573e0733216d2
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 th,
 td {
@@ -416,3 +424,5 @@ there.
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
+
+*/
