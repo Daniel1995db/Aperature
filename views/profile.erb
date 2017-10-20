@@ -14,11 +14,13 @@
 			</ul>
 		</div>
 
+		<%= erb :newpost %>
+
 		<div class="currentPost">
 			<h2>Recent Posts</h2>
 			<% user.posts.each do |post| %>
 			<img src="<%= post.photo.url %>" />
-			<%= post.datetime %>
+			<%= post.datetime.strftime("%I:%M%p") %>
 			<%= post.message %>
 
 			<div class="comments1">

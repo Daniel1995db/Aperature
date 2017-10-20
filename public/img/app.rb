@@ -152,9 +152,6 @@ post '/deleteaccountpage' do
   erb :deleteaccountpage
 end
 
-get '/contact' do
-  erb :contact
-end
 
 
 
