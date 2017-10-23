@@ -1,72 +1,233 @@
-
-
-
-body {
-	background: linear-gradient(to bottom, #bcbdc4, #5fc4e2);
-	background-size: cover;
-	background-repeat: no-repeat;
+body:after{
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  content:'';
+  background: linear-gradient(to bottom, #3399FF, #66FF9C);
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index:-2;
 }
-
-.otherbody{
-	background: linear-gradient(to bottom, #bcbdc4, #5fc4e2);
-	background-repeat: no-repeat;
-	height: 100ch;
-
-
+body{
+	/*width: 1000px;*/
+	text-align: center;
+	margin: 100px auto 0px auto; 
 }
-.header {
-	position: fixed;
-	width: 100%;
-	height: 100px;
-	top:0;
-	left:0;
-	background-color: #04acdd;
-	z-index: -1;
-	-webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
-}
-
-
-.h1HomePage {
-	position: fixed;
-	font-family: 'Pacifico', cursive;
-	font-size: 30px;
-	color: white;
-	z-index: 1;
-	padding-left: 45%;
-}
-
-.button {
-	position: fixed;
-	padding: 50%;
-	height: 1000px;
-	width: 70px;
-}
-
-.loginbutton {
-	height: 60px;
-	width: 115px;
-}
-
-
 /*Danny's Editing*/
+
+/*Header*/
+.Header{
+	width:100%;
+	height: 100px;
+	background-color: white;
+	background-size: cover;
+  	display: flex;
+  	flex: 1;
+  	position: fixed;
+  	top: 0%;
+  	z-index: 1;
+  	color: black;
+}
+.logoAperture{
+	padding-top: 3px;
+	height: 97px;
+	width: 120px;
+	z-index: 2;
+	margin-left: 10px;
+}
+.ApertureHeader{
+	font-family: "Brush Script MT";
+	font-size: 100px;
+	font-weight: bold;
+	color: black;
+	height: 90px;
+	margin: -30px 10px 0px auto;
+}
+.Header a{
+	text-decoration: none;
+}
+.Header a:hover{
+	color: #262626;
+}
+/*NAV BAR*/
+.nav{	
+  flex: 1;
+  flex-direction: row;
+  width: 80%;
+  /*padding: 1px 20px;*/
+  position: fixed; 
+  top: 4%;
+  left: 3%;
+  margin: 0;
+  z-index: 1;
+  padding: 0px;
+  display: inline-block;
+  /*padding-top: 4px;
+  padding-bottom: -2px;*/
+}
+.nav li{
+	font-size: 1.5em;
+	list-style: none;
+	font-weight: bold; 
+	text-decoration: none;
+	border-left-style: solid;
+	border-color: 
+	margin: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	color: black;
+	width: 13%;
+	display: inline-block;
+	height: 50px;
+}
+.nav li a{
+	text-decoration: none;
+	text-shadow: 0.5px 0.5px grey;
+	color: black;
+}
+.nav li a:hover{
+	color: #0099ff;
+}
+.nav .buzzfeedPageNav{
+	border-left-style: none;
+}
+.nav ul{
+	margin-bottom: 0px;
+}
+
+/*Home Page*/
+.HomePage{
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-gap: 10px;
+	width: 1000px;
+	margin: 13% auto auto auto;
+}
+.HomePageWelcome{
+	grid-column: 1;
+	height: 400px;
+	font-weight: bold;
+}
+.h1HomePage{
+	font-family: "HurmeGeometricSans1-Regular", sans-serif;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	font-size: 5em;
+	margin-top: 50px;
+}
+.HomePagebutton{
+	grid-column: 2;
+	text-align: center;
+	/*margin-top: 250px;*/
+}
+.HomePageAperture{
+	font-family: "Brush Script MT";
+	font-weight: bold;
+	font-size: 150px;
+}
+.loginbutton input, .signupbutton input{
+	font-size: 80px;
+	width: 450px;
+	height: 100px;
+	color: white;
+}
+.Slogan{
+	font-family: "Brush Script MT";
+	margin-top: 30px;
+}
+.HomePageWelcome h1{
+	font-family: "Brush Script MT";
+	margin-bottom: 0px;
+}
+.icons{
+	width: 50px;
+	list-style: none;
+	display: flex;
+  	flex: 1;
+  	flex-direction: row;
+  	margin: 5px;
+  	position: fixed;
+  	bottom: 0%;
+  	right: 10%;
+}
+.icons img{
+	margin: 5px;
+}
+
+/*Log In Page*/
+.LogInPage{
+	width: 600px;
+	height: 300px;
+	border-style: solid; border-color: white;
+	margin: 15% auto auto auto;
+}
+.LogInPage input{
+	display: inline-block;
+}
+.usernameInput{
+	height: 30px;
+	width: 230px;
+	border-radius: 5px;
+}
+.passwordInput{
+	width: 235px;
+}
+.LogInPageH1{
+ 	font-family: "HurmeGeometricSans1-Regular", sans-serif;
+ 	font-weight: bold;
+}
+
+/*Sign Up Page*/
+.SignUpPage{
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-gap: 10px;
+	width: 1000px;
+	margin: 3% auto auto auto;
+}
+.SignUpWelcome{
+	grid-column: 1;
+}
+.signUpForm{
+	grid-column: 2;
+	text-align: center;
+	padding-left: 100px;
+}
+.signUpForm td{
+	border-bottom-style: none;
+	margin-left: 10px;
+	padding: 0px;
+	/*width: 200px;*/
+}
+.signUpForm td label{
+	width: 150px;
+	font-size: 1.5em;
+}
+.signUpForm td input{
+	height: 30px;
+	width: 230px;
+}
 
 /*contact page styling*/
 .contactHeading{
   text-align: center;
   font-family: "HurmeGeometricSans1-Regular", sans-serif;
   font-size: 3em;
-  margin-top: 15px;
+  padding-top: 25px;
 
 }
 .contactParagraph{
   text-align: center;
   font-family: "HurmeGeometricSans1-Regular", sans-serif;
-  width: 800px;
-  margin: 22px auto 22px auto;
+  /*width: 800px;*/
+  margin: 22px 5px 22px 5px;
 }
 
 .sideBySide {
-  width:80%;
+  width:99%;
   margin: 0px auto 100px auto;
   box-sizing: border-box;
   text-align: center;
@@ -153,14 +314,6 @@ body {
 .sendButton{
   width: 40px;
 }
-
-
-/*.form1{
-  width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 100px;
-}*/
 .container{
   margin-bottom: 100px;
   margin-top: 300px;
@@ -170,11 +323,162 @@ body {
   opacity: 0;
   overflow: hidden;
   transition: all 1.5s;
-/*  width:900px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 100px;
-*/}
+}
 
+/*Profile Page*/
+.Profilecomments, .buzzfeedComments{
+	display: block;
+}
+
+/*BuzzFeed Page*/
+.buzzfeedContainer{
+	width: 1000px;
+	margin: auto;
+}
+.otherUsers{
+	width: 210px;
+	position: fixed;
+	top: 12.5%;
+	right: 0%;
+}
+.AllUsers li {
+	margin: auto 0px auto 0px;
+	list-style: none;
+	font-size: 1.5em;
+}
+.AllUsers ul{
+	margin: 0px;
+}
+.AllUsers li a{
+	color: white;
+	text-decoration: none;
+}
+.AllUsers li a:hover{
+	color: grey;
+}
+.PostonBuzzfeed{
+	margin-bottom: 7px;
+	text-align: center;
+}
+.post_message{
+	font-size: 25px;
+	text-align: center;
+}
+.buzzfeedPost{
+	width: 500px;
+	margin: auto;
+}
+.comments1{
+	text-align: left;
+}
+.commentsForm table td{
+	border-bottom: 0px;
+}
+.commentsForm td textarea{
+	height: 40px;
+	width: 350px;
+}
+.commentsForm{
+	border-bottom-style: solid;
+	border-color: white;
+}
+/*Modal-View Profile*/
+/*#ProfileModal{
+	border-style: solid;
+	border-color: black;
+	padding: 10px;
+	width: 624px;
+	background-color: white;
+	position: fixed;
+	left:50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	z-index: 1;
+	display: none;
+}
+#ProfileModal #button1{
+	display: block;
+	margin-left: auto;
+}*/
+#flashMessage{
+	font-family: "Brush Script MT";
+	font-size: 50px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+.NewPostForm{
+	display: inline-block;
+	width: 250px;
+}
+.NewPost{
+	position: fixed;
+	left: 0%;
+	top: 13%;
+	/*border-right-style: solid;
+	border-bottom-style: solid;
+	border-color: white;*/
+}
+.NewPostForm input{
+	width: 200px;
+}
+
+/*Profile Page*/
+.profileCredentials li{
+	list-style: none;
+	font-size: 20px;
+}
+.profileCredentials{
+	margin: auto;
+	width: 500px;
+	border-bottom-style: solid;
+}
+.bolding{
+	font-weight: bold;
+}
+.currentPost{
+	width: 510px;
+	margin: auto;
+}
+
+/*Edit Account Page*/
+.editAccount{
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-gap: 10px;
+	width: 600px;
+	margin: 70px auto auto auto;
+}
+.editAccount label{
+	grid-column: 1;
+}
+.editAccount input{
+	grid-column: 2;
+}
+.deleteaccountbutton, .cancelbutton{
+	width: 300px;
+}
+.deleteaccountbutton1{
+	font-weight: bold;
+	width: 400px;
+	margin-left: 40px;
+	margin-right: 70px;
+}
+
+/*About Page*/
+.SloganForAbout{
+	font-family: "Brush Script MT";
+	font-size: 100px;
+	padding-top: 15px;
+}
+.messageAbout{
+	width: 600px;
+	display: inline-block;
+}
+.logoAbout{
+	width: 500px;
+	padding-left: 60px;
+	margin-right: 80px;
+	display: inline-block;
+}
 
 

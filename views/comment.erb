@@ -1,6 +1,10 @@
 
-<form method="POST" action="/comment" class="" >
-	<input type="hidden" name="post_id" value="<%= post.id %>" />
-	<textarea name="message" placeholder="Comment..."></textarea>
-	<input type="submit" value="Comment" />
+<form method="POST" action="/comment" class="commentsForm" >
+	<table>
+		<input type="hidden" name="post_id" value="<%= post.id %>" />
+		<tr>
+			<td><textarea name="message" placeholder="Comment..."></textarea></td>
+			<td><input type="submit" value="Comment" /></td>
+		</tr>
+	</table>
 </form>

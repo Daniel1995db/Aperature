@@ -2,21 +2,28 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>GOTgram</title>
+	<link rel="shortcut icon" href="/img/Logo_Aperture.png">
+	<title>Aperture</title>
 	<link rel="stylesheet" type="text/css" href="/css/normalize.css"/>
       <link rel="stylesheet" type="text/css" href="/css/skeleton.css"/>
-      <link href="https://fonts.googleapis.com/css?family=Nosifer|Pacifico" rel="stylesheet">
-	<link rel="stylesheet" href="/css/default.css"/>
-	
-	
-	
+    <!-- <link href="https://fonts.googleapis.com/css?family=Nosifer|Pacifico" rel="stylesheet"> -->
+	<link rel="stylesheet" type="text/css" href="/css/default.css">	
 </head>
-<body class="<%=@class%>">
-	<div id="flashMessage"><%= flash[:message] %>
+<body >
+	<div class="Header">
+		<div><img class="logoAperture" src="/img/Logo_Aperture.png"></div>
+		<div class="ApertureHeader"><a href="/about">Aperture</a></div>
 	</div>
-	<div class="header">
-	</div>
-	
+	<div id="flashMessage">
+		<%= flash[:message] %>
+	</div>	
+	<ul class="icons">
+  		<li><a href="https://www.facebook.com/" target="blank"><img src="/img/fb.svg" /></a></li>
+  		<li><a href="https://www.instagram.com/" target="blank"><img src="/img/insta.svg" /></a></li>
+  		<li><a href="https://twitter.com/" target="blank"><img src="/img/twitter.svg" /></a></li>
+	</ul>
 	<%= yield %>
 </body>
 </html>
+
+<!-- class="<%=@class%>" -->

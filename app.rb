@@ -18,17 +18,17 @@ before do
 end
 
 # login protecting routes
-before ['/buzzfeed','/profile','/newpost','/logout','/newpost',"/editaccount"] do
+before ['/buzzfeed','/profile','/newpost','/logout','/newpost',"/editaccount",'/about'] do
   redirect '/' unless @current_user
 end
 
 get '/' do
-  @class="otherbody"
+  # @class="otherbody"
   erb :home
 end
 
 get '/home' do
-  @class="otherbody"
+  # @class="otherbody"
   redirect '/signup'
 end
 
@@ -42,16 +42,17 @@ end
 get '/profile' do
   # @users = User.all
   # @class="otherbody"
+  @users = User.all
   erb :profile, locals: {user: @current_user}
 end
 
 get'/login' do
-  @class="otherbody"
+  # @class="otherbody"
   erb :login
 end
 
 get '/signup' do 
-  @class="otherbody"
+  # @class="otherbody"
   erb :signup
 end
 
@@ -68,7 +69,7 @@ post '/signup' do
   )
   # user.photo = params[:photo]
   if user.save
-    flash[:message] = "Welcome! You've registered successfully"
+    flash[:message] = "You've registered successfully! Welcome to the team!"
     session[:user_id] = user.id
     redirect '/buzzfeed'
   else
@@ -126,10 +127,11 @@ post '/profile/update' do
         username: params[:username],
         password: params[:password],
         occupancy: params[:occupancy],
-        relationship: params[:relationship]
+        relationship: params[:relationship],
+        photo: params[:photo]
     ) 
     flash[:message] = "You've Updated Your Profile!" 
-    redirect '/buzzfeed'
+    redirect '/profile'
 end
  
 post '/deleteaccount' do
@@ -146,6 +148,18 @@ post '/deleteaccount' do
   flash[:message] = "Your account has been deleted, we apologize for any inconviniece we may have caused you that led to this"
   redirect '/'
 end
+
+# post '/deletepost' do
+#   Post.transaction do
+#     @post.comments.destroy_all
+#     @post.destroy
+#     session[:post_id] = nil
+#   end
+#   flash[:message] = "Your post has been deleted"
+#   redirect back
+# end
+
+
 get '/editaccount' do
   erb :editaccount
 end
@@ -160,3 +174,20 @@ end
 get '/contact' do
   erb :contact
 end
+
+get '/otherusers' do
+  @users = User.all
+  erb :otherusers
+end
+
+get '/about' do
+  erb :about
+end
+get'/cancel' do
+  erb :deleteaccountpage
+  redirect '/buzzfeed'
+end
+
+
+
+

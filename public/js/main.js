@@ -1,3 +1,4 @@
+// Contact Form
 let contactMessage;
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -10,3 +11,13 @@ document.addEventListener("DOMContentLoaded", function(){
 		elForm.style.opacity = 1;
 	});
 });
+
+// Modal for Viewing Profile
+// setTimeout(function(){
+//     document.getElementById("ProfileModal").style.display = "block";
+// });
+
+// document.getElementById("button1").addEventListener("click", function(event){
+// 	event.preventDefault();
+// 	    document.getElementById("ProfileModal").style.display = "none";
+// });

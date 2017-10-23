@@ -1,10 +1,14 @@
 <%= erb :nav %>
+
+<h1 style="text-align: center; font-family: 'HurmeGeometricSans1-Regular', sans-serif; font-size: 3em; padding-top: 30px;">Edit Account</h1>
+<h5>Not satisfied with your Username or Password<br>Had a change of Occupancy or Relationship Status<br>Just change it here</h5>
+
 <% if @current_user %>
 
 <form method="POST" enctype="multipart/form-data" class="editAccount" action="/profile/update">
 	<label>Change Username</label><input type="text" name="username" value="<%= @current_user.username %>" />
 	<label>Change Password</label><input type="password" name="password" value="<%= @current_user.password %>" />
-	<!-- <input type="file" value="<%= @current_user.photo %>" /> -->
+	<label style="height: 40px;">Change Profile Photo</label><input type="file" name="photo" value="<%= @current_user.photo %>" />
 	<label>Change Occupancy</label><input type="text" name="occupancy" value="<%= @current_user.occupancy %>">
 	<label>Change Relationship</label><input type="text" name="relationship" value="<%= @current_user.relationship %>">
 	<!-- <input type="text" value="Delete Account" /> -->
@@ -12,7 +16,7 @@
 </form>
 
 <form method="POST" action="/deleteaccountpage" >
-	<input type="submit" value="DELETE ACCOUNT">
+	<label style="color: red; display: inline-block; font-weight: bold; font-size: 25px;">DELETE ACCOUNT</label><input class="deleteaccountbutton1" type="submit" value="DELETE ACCOUNT">
 </form>
 
 <% end %>
