@@ -1,19 +1,51 @@
+<h1 style="font-family:'Brush Script MT'; font-weight: bold; padding-top: 20px;">SIGN UP!</h1>
+<div class="SignUpPage">
+	<div class="SignUpWelcome">
+		<h5>We are so stoked that you're here joining our team!</h5>
+		<h5>Pictures are our form of Art and our way of telling stories. But before you get started in telling us yours, please fill out the form to the right.</h5>
+	</div>
 
-
-<form method="POST" enctype="multipart/form-data" class="signUpForm" action="/signup">
-	<label>First Name</label><input type="" name="name" />
-	<label>Last Name</label><input type="" name="last" />
-	<label>Username</label><input type="" name="username" />
-	<label>Password</label><input type="" name="password" />
-	<label>Profile Photo</label><input type="file" name="photo" />
-	<label>Occupancy</label><input type="" name="occupancy" />
-	<label>Relationship</label><select name="relationship">
-		<option value="Single">Single</option>
-		<option value="Dating">Dating</option>
-		<option value="Married">Married</option>
-		<option value="Divorced">Divorced</option> 
-		<option value="Widowed">Widowed</option>
-		<option value="It's Complicated">It's Complicated</option>
-	</select>
-	<input type="submit" />
-</form>
+	<form method="POST" enctype="multipart/form-data" class="signUpForm" action="/signup">
+	<table>
+		<tr>
+			<td><label>First Name</label></td>
+			<td><input type="" name="name" /></td>
+		</tr>
+		<tr>
+			<td><label>Last Name</label></td>
+			<td><input type="" name="last" /></td>
+		</tr>
+		<tr>
+			<td><label>Username</label></td>
+			<td><input type="" name="username" /></td>
+		</tr>
+		<tr>
+			<td><label>Password</label></td>
+			<td><input type="" name="password" /></td>
+		</tr>
+		<tr>
+			<td><label>Profile Photo</label>
+			<td><input type="file" name="photo" /></td>
+		</tr>
+		<tr>
+			<td><label>Occupancy</label></td>
+			<td><input type="" name="occupancy" /></td>
+		</tr>
+		<tr>
+			<td><label>Relationship</label></td>
+			<td><select name="relationship">
+				<option value="Single">Single</option>
+				<option value="Dating">Dating</option>
+				<option value="Married">Married</option>
+				<option value="Divorced">Divorced</option> 
+				<option value="Widowed">Widowed</option>
+				<option value="It's Complicated">It's Complicated</option>
+			</select></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input style="height: 40px;" type="submit" /></td>
+		</tr>
+		</form>
+	</table>
+</div>

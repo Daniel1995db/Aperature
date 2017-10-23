@@ -1,0 +1,10 @@
+<div class="otherUsers">	
+	<h1 style="font-family:'Brush Script MT'; margin-bottom: 0px;">Members</h1>
+	<% @users.each do |user| %>
+	<div class="AllUsers">
+			<ul>
+				<li><a href=""><%= user.name %> <%= user.last %></a></li>
+			</ul>
+	</div>
+	<% end %>
+</div>	
