@@ -21,14 +21,15 @@
 		<div class="currentPost">
 			<h2 style="font-family:'Brush Script MT'; font-size: 70px;">My Recent Posts</h2>
 			<% user.posts.each do |post| %>
-			<!-- <form method="POST" action="/deletepost">
+			<form method="POST" action="/deletepost">
+					<input type="hidden" name="post_id" value="<%= post.id %>" />
 					<input type="submit" value="Delete Post">
-			</form> -->
+			</form>
 				<div class="postedOn" style="position: relative; width: 300px; display: inline-block; font-weight: bold; font-size: 21px;">
 					<%= post.datetime.strftime("%I:%M%p") %>
 					<%= post.datetime.strftime("%B %d, %Y") %>
 				</div>
-			<div class="PostProfile" style="background-image: url('<%= post.photo.url %>'); width: 500px; height: 500px; background-size: cover; background-position: center; margin: 0px auto 0px auto; border-style: solid; border-color: white;"></div>
+			<div class="PostProfile" style="background-image: url('<%= post.photo.url %>'); width: 500px; height: 500px; background-size: cover; background-position: center; margin: 0px auto 0px auto; border-style: solid; border-color: white; box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.20), 0 4px 4px 0 rgba(0, 0, 0, 0.20);"></div><br>
 			<!-- <img src="<%= post.photo.url %>" /> -->
 			<div class="post_message">"<%= post.message %>"</div>
 

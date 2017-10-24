@@ -1,5 +1,15 @@
-<% @user.each do |user| %>
-<div id="ProfileModal">
-	<button id="button1">X</button>
+<%= erb :nav %>
+<%= erb :otherusers %>
+
+
+<div class="ViewAnothersProfile">
+	<h1 style="font-family:'Brush Script MT'; font-size: 100px; font-weight: bold; width: 700px; margin: auto auto 20px auto;"><%= @user.name %> <%= @user.last %></h1>
+	<div class="ProfileImage" style="background-image: url('<%= @user.photo.url %>'); width: 500px; height: 500px; text-align: center; background-size: cover; background-position: center; margin: 0px auto 10px auto; border-radius: 50%; "></div>
+	<div class="profileCredentials">
+			<ul>
+				<li><span class="bolding">Username:</span> <%= @user.username %></li>
+				<li><span class="bolding">Occupancy:</span> <%= @user.occupancy %></li>
+				<li><span class="bolding">Relationship:</span> <%= @user.relationship %></li>
+			</ul>
+	</div>
 </div>
-<% end %>

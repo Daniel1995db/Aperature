@@ -29,6 +29,7 @@ body{
   	top: 0%;
   	z-index: 1;
   	color: black;
+  	-webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, .30);
 }
 .logoAperture{
 	padding-top: 3px;
@@ -409,11 +410,13 @@ body{
 .NewPostForm{
 	display: inline-block;
 	width: 250px;
+
 }
 .NewPost{
 	position: fixed;
 	left: 0%;
 	top: 13%;
+	
 	/*border-right-style: solid;
 	border-bottom-style: solid;
 	border-color: white;*/
@@ -480,5 +483,7 @@ body{
 	margin-right: 80px;
 	display: inline-block;
 }
-
+.NewPostButton{
+	color: #3399FF;
+}
 

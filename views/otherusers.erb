@@ -3,7 +3,7 @@
 	<% @users.each do |user| %>
 	<div class="AllUsers">
 			<ul>
-				<li><a href=""><%= user.name %> <%= user.last %></a></li>
+				<li><a href="/users/<%= user.id %>"><%= user.name %> <%= user.last %></a></li>
 			</ul>
 	</div>
 	<% end %>
