@@ -149,15 +149,16 @@ post '/deleteaccount' do
   redirect '/'
 end
 
-# post '/deletepost' do
-#   Post.transaction do
-#     @post.comments.destroy_all
-#     @post.destroy
-#     session[:post_id] = nil
-#   end
-#   flash[:message] = "Your post has been deleted"
-#   redirect back
-# end
+post '/deletepost' do
+  @post = Post.find_by(user_id: @current_user.id, id: params[:post_id])
+  Post.transaction do
+    @post.comments.destroy_all
+    @post.destroy
+    session[:post_id] = nil
+  end
+  flash[:message] = "Your post has been deleted"
+  redirect back
+end
 
 
 get '/editaccount' do
@@ -175,9 +176,10 @@ get '/contact' do
   erb :contact
 end
 
-get '/otherusers' do
+get '/users/:id' do
   @users = User.all
-  erb :otherusers
+  @user = User.find(params[:id])
+  erb :viewprofile
 end
 
 get '/about' do
